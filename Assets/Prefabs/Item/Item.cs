@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
     ItemGameEvent _onItemPickedUp;
     IGameEventListener<Item> _onItemPickedUpListener;
     [SerializeField]
-    ItemDetails _itemDetails; public ItemDetails ItemData => _itemDetails;
+    ItemDetails _itemDetails; public ItemDetails ItemDetails => _itemDetails;
 
     void OnEnable()
     {

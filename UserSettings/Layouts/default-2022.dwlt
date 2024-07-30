@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -370,7 +370,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 258
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -413,23 +413,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a6280000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 28f4ffff48f4ffff28f5ffff1c6700002c67000076670000
+      m_ExpandedIDs: 1afbffffaa640000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Canvas - UI
-        m_OriginalName: Canvas - UI
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 26396
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -1117,7 +1117,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Item/Sword
+    - Assets/Prefabs/Inventory
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1125,16 +1125,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Item/Sword
+  - Assets/Prefabs/Inventory
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\vivia\GitHub\VIVIANHORING_BGS-TASK
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 42}
-    m_SelectedIDs: 14260000
-    m_LastClickedID: 9748
-    m_ExpandedIDs: 00000000fc250000a0680000a2680000a4680000a6680000a8680000aa680000ac680000ae680000b0680000b2680000b4680000b66800005c7e000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: be690000
+    m_LastClickedID: 27070
+    m_ExpandedIDs: 0000000076660000786600007a6600007c6600007e66000080660000826600008466000086660000886600008a6600008c6600008e66000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1162,7 +1162,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fc250000a0680000a2680000a4680000a6680000a8680000aa680000ac680000ae680000b0680000b2680000b4680000b6680000
+    m_ExpandedIDs: 0000000076660000786600007a6600007c6600007e66000080660000826600008466000086660000886600008a6600008c6600008e660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1288,7 +1288,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -3000
+  m_LastSelectedObjectID: -1424
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52

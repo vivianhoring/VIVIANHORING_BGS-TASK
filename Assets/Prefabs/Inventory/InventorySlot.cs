@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,24 +11,36 @@ public class InventorySlot : MonoBehaviour
     [SerializeField]
     Button _removeButton;
     [SerializeField]
-    ItemGameEvent _onRemoveItem;
-
-    [SerializeField]
     Button _itemButton;
     [SerializeField]
-    ItemGameEvent _onUseItem;
+    TMP_Text _equippedText;
+    [SerializeField]
+    InventoryController _inventoryController;
 
     [SerializeField]
-    TMP_Text _equippedText;
+    BoolGameEvent _onItemEquippedChange;
+    IGameEventListener<bool> _onItemEquippedChangeListener;
 
     Item _item;
+
+    void OnEnable()
+    {
+        _onItemEquippedChangeListener = new GameEventListener<bool>(itemEquipped => SetEquippedFlag(itemEquipped));
+        _onItemEquippedChange.RegisterListener(_onItemEquippedChangeListener);
+    }
+
+    void OnDisable()
+    {
+        _onItemEquippedChange.UnregisterListener(_onItemEquippedChangeListener);
+    }
 
     public void AddItem(Item newItem)
     {
         _item = newItem;
-        _icon.sprite = _item.ItemData.Image;
+        _icon.sprite = _item.ItemDetails.Image;
         _icon.enabled = true;
         _removeButton.interactable = true;
+        _itemButton.interactable = true;
     }
 
     public void ClearSlot()
@@ -36,20 +49,21 @@ public class InventorySlot : MonoBehaviour
         _icon.sprite = null;
         _icon.enabled = false;
         _removeButton.interactable = false;
+        _itemButton.interactable = false;
     }
 
     public void OnRemoveButton()
     {
-        _onRemoveItem.Trigger(_item);
+        _inventoryController.RemoveItem(_item);
     }
 
     public void OnUseItem()
     {
-        _onUseItem.Trigger(_item);
+        _inventoryController.UseItem(_item);
     }
 
-    public void SinalizeItemEquipped(Item equippedItem)
+    public void SetEquippedFlag(bool itemEquippedChange)
     {
-        //_equippedText.enabled = equippedItem.ItemData.Equipped;
+        _equippedText.enabled = itemEquippedChange;
     }
 }

@@ -17,14 +17,11 @@ public class InventoryData : MonoBehaviour
     IGameEventListener<bool> _onInventoryActiveListener;
 
     [SerializeField]
-    ItemGameEvent _onRemoveItem;
-    IGameEventListener<Item> _onRemoveItemListener;
-
-    [SerializeField]
-    ItemGameEvent _onUseItem;
-    IGameEventListener<Item> _onUseItemListener;
+    BoolGameEvent _onItemEquippedChange;
+    IGameEventListener<bool> _onItemEquippedChangeListener;
 
     bool _inventoryOn;
+    bool _itemEquippedChange;
     InventorySlot[] _slots;
 
     void Start()
@@ -36,19 +33,14 @@ public class InventoryData : MonoBehaviour
     void OnEnable()
     {
         _onInventoryActiveListener = _onInventoryActive.RegisterListener(new GameEventListener<bool>((bool inventoryOn) => SetActiveInventory(inventoryOn)));
-
-        _onRemoveItemListener = _onRemoveItem.RegisterListener(new GameEventListener<Item>((_) => UpdateUI()));
-        _onRemoveItem.RegisterListener(_onRemoveItemListener);
-
-        _onUseItemListener = _onUseItem.RegisterListener(new GameEventListener<Item>((_) => UpdateUI()));
-        _onUseItem.RegisterListener(_onUseItemListener);
+        _onItemEquippedChangeListener = new GameEventListener<bool>(itemEquippedChange => SetEquippedFlagChange(itemEquippedChange));
+        _onItemEquippedChange.RegisterListener(_onItemEquippedChangeListener);
     }
 
     void OnDisable()
     {
         _onInventoryActive.UnregisterListener(_onInventoryActiveListener);
-        _onRemoveItem.UnregisterListener(_onRemoveItemListener);
-        _onUseItem.UnregisterListener(_onRemoveItemListener);
+        _onItemEquippedChange.UnregisterListener(_onItemEquippedChangeListener);
     }
 
     void SetActiveInventory(bool inventoryOn)
@@ -58,18 +50,23 @@ public class InventoryData : MonoBehaviour
         if (_inventoryOn) UpdateUI();
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         for(int i = 0; i < _slots.Length; i++)
         {
-            //_slots[i].GetComponent<InventorySlot>().SinalizeItemEquipped(_inventoryController.InventoryList[i]);
             if(i<_inventoryController.InventoryList.Count)
             {
                 _slots[i].AddItem(_inventoryController.InventoryList[i]); 
+                _slots[i].SetEquippedFlag(_itemEquippedChange);
             } else
             {
                 _slots[i].ClearSlot();
             }
         }
+    }
+
+    void SetEquippedFlagChange(bool itemEquippedFlag)
+    {
+        _itemEquippedChange = itemEquippedFlag;
     }
 }

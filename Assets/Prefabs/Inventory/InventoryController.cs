@@ -10,40 +10,28 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     ItemGameEvent _onTryItemPickedUp;
     IGameEventListener<Item> _onTryItemPickedUpListener;
-    
-    [SerializeField]
-    ItemGameEvent _onRemoveItem;
-    IGameEventListener<Item> _onRemoveItemListener;
 
     [SerializeField]
     int _inventorySize;
     List<Item> _inventoryList; public List<Item> InventoryList => _inventoryList;
 
     [SerializeField]
-    ItemGameEvent _onUseItem;
-    IGameEventListener<Item> _onUseItemListener;
+    BoolGameEvent _onItemEquippedChange;
 
     [SerializeField]
-    ItemGameEvent _onEquippedItem;
-    IGameEventListener<Item> _onEquippedItemListener;
+    InventoryData _inventoryData;
+    [SerializeField]
+    EquipmentController _equipmentController;
 
     void OnEnable()
     {
         _onTryItemPickedUpListener = new GameEventListener<Item>(item => TryPickUpItem(item));
         _onTryItemPickedUp.RegisterListener(_onTryItemPickedUpListener);
-
-        _onRemoveItemListener = _onRemoveItem.RegisterListener(new GameEventListener<Item>(item => RemoveItem(item)));
-        _onRemoveItem.RegisterListener(_onRemoveItemListener);
-
-        _onUseItemListener = _onUseItem.RegisterListener(new GameEventListener<Item>(item => UseItem(item)));
-        _onUseItem.RegisterListener(_onUseItemListener);
     }
 
     void OnDisable()
     {
         _onTryItemPickedUp.UnregisterListener(_onTryItemPickedUpListener);
-        _onRemoveItem.UnregisterListener(_onRemoveItemListener);
-        _onUseItem.UnregisterListener(_onUseItemListener);
     }
 
     void Start()
@@ -53,7 +41,7 @@ public class InventoryController : MonoBehaviour
 
     void TryPickUpItem(Item item)
     {
-        if(item.ItemData.ItemType == ItemType.Bag) 
+        if(item.ItemDetails.ItemType == ItemType.Bag) 
         { 
             _inventorySize += 3;
             _onItemPickedUp.Trigger(item);
@@ -63,44 +51,55 @@ public class InventoryController : MonoBehaviour
         {
             _inventoryList.Add(item);
             _onItemPickedUp.Trigger(item);
+            _inventoryData.UpdateUI();
         }
         else
         {
-            Debug.Log("Não consegue pegar o item");
+            Debug.Log("Inventory full");
         }
     }
 
-    void RemoveItem(Item removeItem)
+    public void RemoveItem(Item removeItem)
     {
         for (int i = _inventoryList.Count - 1; i >= 0; i--)
         {
-            if (_inventoryList[i].ItemData.ItemType == removeItem.ItemData.ItemType)
+            if (_inventoryList[i].ItemDetails.ItemType == removeItem.ItemDetails.ItemType)
             {
                 _inventoryList.RemoveAt(i);
             }
         }
+        _inventoryData.UpdateUI();
     }
 
-    void UseItem(Item item)
+    public void UseItem(Item item)
     {
-        if(item.ItemData.ItemType == ItemType.Potion) UsePotion(item);
-        else if(item.ItemData.ItemType == ItemType.Armor) EquipArmor(item);
-        else if(item.ItemData.ItemType == ItemType.Weapon) EquipWeapon(item);
+        if(item.ItemDetails.ItemType == ItemType.Potion) UsePotion(item);
+        else if(item.ItemDetails.ItemType == ItemType.Armor) EquipArmor(item);
+        else if(item.ItemDetails.ItemType == ItemType.Weapon) EquipWeapon(item);
     }
 
     void UsePotion(Item item)
     {
         Debug.Log("Potion consumed");
         RemoveItem(item);
+        _inventoryData.UpdateUI();
+        item.ItemDetails.Equipped = false;
     }
+
     void EquipArmor(Item item)
     {
-        Debug.Log("Armor equipped");
-        item.ItemData.Equipped = true;
+        OnEquippedItem(item);
+        _inventoryData.UpdateUI();
     }
+
     void EquipWeapon(Item item)
     {
-        Debug.Log("Weapon equipped");
-        item.ItemData.Equipped = true;
+        OnEquippedItem(item);
+        _inventoryData.UpdateUI();
+    }
+
+    void OnEquippedItem(Item item)
+    {
+        _equipmentController.SelectEquipment(item);
     }
 }
