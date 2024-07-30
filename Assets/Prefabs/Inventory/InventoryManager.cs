@@ -10,19 +10,23 @@ public class InventoryManager : MonoBehaviour
     [SerializeField]
     Inventory _inventory;
     [SerializeField]
-    private List<InventoryImage> _inventoryImages;
+    Transform _itemsParent;
     [SerializeField]
-    EmptyGameEvent _onInventoryActive;
-    IEmptyGameEventListener _onInventoryActiveListener;
+    BoolGameEvent _onInventoryActive;
+    IGameEventListener<bool> _onInventoryActiveListener;
+
+    bool _inventoryOn;
+    InventorySlot[] _slots;
 
     void Start()
     {
-        _inventoryCanvas.enabled = false;
+        _inventoryCanvas.enabled = _inventoryOn;
+        _slots = _itemsParent.GetComponentsInChildren<InventorySlot>();
     }
 
     void OnEnable()
     {
-        _onInventoryActiveListener = new EmptyGameEventListener(SetActiveInventory);
+        _onInventoryActiveListener = _onInventoryActive.RegisterListener(new GameEventListener<bool>((bool inventoryOn) => SetActiveInventory(inventoryOn)));
         _onInventoryActive.RegisterListener(_onInventoryActiveListener);
     }
 
@@ -31,20 +35,24 @@ public class InventoryManager : MonoBehaviour
         _onInventoryActive.UnregisterListener(_onInventoryActiveListener);
     }
 
-    void SetActiveInventory()
+    void SetActiveInventory(bool inventoryOn)
     {
-        _inventoryCanvas.enabled = true;
-        PopulateInventory();
+        _inventoryOn = inventoryOn;
+        _inventoryCanvas.enabled = _inventoryOn;
+        if (_inventoryOn) UpdateUI();
     }
 
-    void PopulateInventory()
+    void UpdateUI()
     {
-        if (_inventory.InventoryList.Count == 0) return;
-        int count = 0;
-        foreach (var item in _inventory.InventoryList)
+        for(int i = 0; i < _slots.Length; i++)
         {
-            _inventoryImages[count].ItemSprite = item.ItemData.Image;
-            count++;
+            if(i<_inventory.InventoryList.Count)
+            {
+                _slots[i].AddItem(_inventory.InventoryList[i]); 
+            } else
+            {
+                _slots[i].ClearSlot();
+            }
         }
     }
 }

@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 5
+  _onInventoryActive: {fileID: 11400000, guid: 82ca323a736042e46ba46b286f3c0ee0, type: 2}
 --- !u!95 &3124888129839011476
 Animator:
   serializedVersion: 5
@@ -221,3 +222,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onItemPickedUp: {fileID: 11400000, guid: 569007f66b311194fb368c783ff6d808, type: 2}
+  _onTryItemPickedUp: {fileID: 0}
+  _inventorySize: 0
