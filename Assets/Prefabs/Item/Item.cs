@@ -23,6 +23,6 @@ public class Item : MonoBehaviour
 
     void PickUp(Item item)
     {
-        Destroy(item.gameObject, 2f);
+        Destroy(item.gameObject, 0.5f);
     }
 }

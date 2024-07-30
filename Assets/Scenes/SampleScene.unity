@@ -242,6 +242,8 @@ MonoBehaviour:
   _inventory: {fileID: 1777571862}
   _itemsParent: {fileID: 1874926789}
   _onInventoryActive: {fileID: 11400000, guid: 82ca323a736042e46ba46b286f3c0ee0, type: 2}
+  _onRemoveItem: {fileID: 11400000, guid: eaa3953573f946b4fbae6f6cd18bcb2f, type: 2}
+  _onUseItem: {fileID: 11400000, guid: 1237bef2733504142bfc26f665b30113, type: 2}
 --- !u!1001 &156518091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -495,6 +497,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1874926789}
     m_Modifications:
+    - target: {fileID: 1693424272379690667, guid: 8ce1b2cd90aea564ea9e35dcc088480b, type: 3}
+      propertyPath: _onRemoveItem
+      value: 
+      objectReference: {fileID: 11400000, guid: eaa3953573f946b4fbae6f6cd18bcb2f, type: 2}
     - target: {fileID: 2499009084500872334, guid: 8ce1b2cd90aea564ea9e35dcc088480b, type: 3}
       propertyPath: m_Name
       value: InventorySlot (1)
@@ -4025,6 +4031,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1701152899091667839, guid: 125fe42ac139f074cb99502bfcb0a654, type: 3}
+      propertyPath: _onUseItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 1237bef2733504142bfc26f665b30113, type: 2}
+    - target: {fileID: 1701152899091667839, guid: 125fe42ac139f074cb99502bfcb0a654, type: 3}
+      propertyPath: _onRemoveItem
+      value: 
+      objectReference: {fileID: 11400000, guid: eaa3953573f946b4fbae6f6cd18bcb2f, type: 2}
+    - target: {fileID: 1701152899091667839, guid: 125fe42ac139f074cb99502bfcb0a654, type: 3}
       propertyPath: _onTryItemPickedUp
       value: 
       objectReference: {fileID: 11400000, guid: 57661e3d81e85314087136b563fffd6d, type: 2}
@@ -4081,6 +4095,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 125fe42ac139f074cb99502bfcb0a654, type: 3}
+--- !u!1001 &8910919918869628056
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5286825522892838906, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5494313
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286825522892838906, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9895721
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286825522892838906, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286825522892838906, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286825522892838906, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286825522892838906, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286825522892838906, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286825522892838906, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286825522892838906, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286825522892838906, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891229677974778945, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
+      propertyPath: m_Name
+      value: Red Potion 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a38f4c5586c2b645a10a953db978c3b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4092,3 +4163,4 @@ SceneRoots:
   - {fileID: 927414204}
   - {fileID: 129392870}
   - {fileID: 1200277732}
+  - {fileID: 8910919918869628056}

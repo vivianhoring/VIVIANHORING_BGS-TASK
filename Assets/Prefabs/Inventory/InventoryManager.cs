@@ -11,9 +11,18 @@ public class InventoryManager : MonoBehaviour
     Inventory _inventory;
     [SerializeField]
     Transform _itemsParent;
+
     [SerializeField]
     BoolGameEvent _onInventoryActive;
     IGameEventListener<bool> _onInventoryActiveListener;
+
+    [SerializeField]
+    ItemGameEvent _onRemoveItem;
+    IGameEventListener<Item> _onRemoveItemListener;
+
+    [SerializeField]
+    ItemGameEvent _onUseItem;
+    IGameEventListener<Item> _onUseItemListener;
 
     bool _inventoryOn;
     InventorySlot[] _slots;
@@ -27,12 +36,17 @@ public class InventoryManager : MonoBehaviour
     void OnEnable()
     {
         _onInventoryActiveListener = _onInventoryActive.RegisterListener(new GameEventListener<bool>((bool inventoryOn) => SetActiveInventory(inventoryOn)));
-        _onInventoryActive.RegisterListener(_onInventoryActiveListener);
+        _onRemoveItemListener = _onRemoveItem.RegisterListener(new GameEventListener<Item>((_) => UpdateUI()));
+        _onRemoveItem.RegisterListener(_onRemoveItemListener);
+        _onUseItemListener = _onUseItem.RegisterListener(new GameEventListener<Item>((_) => UpdateUI()));
+        _onUseItem.RegisterListener(_onUseItemListener);
     }
 
     void OnDisable()
     {
         _onInventoryActive.UnregisterListener(_onInventoryActiveListener);
+        _onRemoveItem.UnregisterListener(_onRemoveItemListener);
+        _onUseItem.UnregisterListener(_onRemoveItemListener);
     }
 
     void SetActiveInventory(bool inventoryOn)
