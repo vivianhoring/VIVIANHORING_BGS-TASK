@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickUpItem : MonoBehaviour
 {
     [SerializeField]
-    ItemGameEvent _onItemPickedUp;
+    ItemGameEvent _onTryItemPickedUp;
     CircleCollider2D _circleCollider;
 
     Item _item;
@@ -31,7 +31,7 @@ public class PickUpItem : MonoBehaviour
             {
                 if(Input.GetButtonDown("Action"))
                 {
-                    _onItemPickedUp.Trigger(_item);
+                    _onTryItemPickedUp.Trigger(_item);
                 }
             }
         }

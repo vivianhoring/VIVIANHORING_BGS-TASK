@@ -8,5 +8,7 @@ public class ItemData : ScriptableObject, IItem
     [SerializeField]
     string _name; public string Name => _name;
     [SerializeField]
-    string _type; public string Type => _type;
+    ItemType _itemType; public ItemType ItemType => _itemType;
+    [SerializeField]
+    Sprite _image; public Sprite Image => _image;
 }

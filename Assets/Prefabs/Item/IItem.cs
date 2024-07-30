@@ -5,5 +5,6 @@ using UnityEngine;
 public interface IItem
 {
     string Name { get; }
-    string Type { get; }
+    Sprite Image { get; }
+    ItemType ItemType { get; }
 }
