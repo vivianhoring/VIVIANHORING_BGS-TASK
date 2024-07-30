@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onItemPickedUp: {fileID: 11400000, guid: 569007f66b311194fb368c783ff6d808, type: 2}
-  _itemData: {fileID: 11400000, guid: c22afc4589ea246439bb9a603da87cd7, type: 2}
+  _itemDetails: {fileID: 11400000, guid: 69ca0f6a38723d94c90ff7b3e8be2270, type: 2}
 --- !u!60 &8292533497066368087
 PolygonCollider2D:
   m_ObjectHideFlags: 0

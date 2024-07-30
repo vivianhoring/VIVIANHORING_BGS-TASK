@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,10 @@ public class InventorySlot : MonoBehaviour
     Button _itemButton;
     [SerializeField]
     ItemGameEvent _onUseItem;
+
+    [SerializeField]
+    TMP_Text _equippedText;
+
     Item _item;
 
     public void AddItem(Item newItem)
@@ -41,5 +46,10 @@ public class InventorySlot : MonoBehaviour
     public void OnUseItem()
     {
         _onUseItem.Trigger(_item);
+    }
+
+    public void SinalizeItemEquipped(Item equippedItem)
+    {
+        //_equippedText.enabled = equippedItem.ItemData.Equipped;
     }
 }

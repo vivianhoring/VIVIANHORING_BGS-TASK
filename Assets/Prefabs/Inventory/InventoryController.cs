@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class InventoryController : MonoBehaviour
 {
     [SerializeField]
     ItemGameEvent _onItemPickedUp;
@@ -23,12 +23,18 @@ public class Inventory : MonoBehaviour
     ItemGameEvent _onUseItem;
     IGameEventListener<Item> _onUseItemListener;
 
+    [SerializeField]
+    ItemGameEvent _onEquippedItem;
+    IGameEventListener<Item> _onEquippedItemListener;
+
     void OnEnable()
     {
         _onTryItemPickedUpListener = new GameEventListener<Item>(item => TryPickUpItem(item));
         _onTryItemPickedUp.RegisterListener(_onTryItemPickedUpListener);
+
         _onRemoveItemListener = _onRemoveItem.RegisterListener(new GameEventListener<Item>(item => RemoveItem(item)));
         _onRemoveItem.RegisterListener(_onRemoveItemListener);
+
         _onUseItemListener = _onUseItem.RegisterListener(new GameEventListener<Item>(item => UseItem(item)));
         _onUseItem.RegisterListener(_onUseItemListener);
     }
@@ -79,7 +85,7 @@ public class Inventory : MonoBehaviour
     {
         if(item.ItemData.ItemType == ItemType.Potion) UsePotion(item);
         else if(item.ItemData.ItemType == ItemType.Armor) EquipArmor(item);
-        else if(item.ItemData.ItemType == ItemType.Armor) EquipWeapon(item);
+        else if(item.ItemData.ItemType == ItemType.Weapon) EquipWeapon(item);
     }
 
     void UsePotion(Item item)
@@ -89,12 +95,12 @@ public class Inventory : MonoBehaviour
     }
     void EquipArmor(Item item)
     {
-        Debug.Log("Armor equiped");
-        RemoveItem(item);
+        Debug.Log("Armor equipped");
+        item.ItemData.Equipped = true;
     }
     void EquipWeapon(Item item)
     {
-        Debug.Log("Weapon equiped");
-        RemoveItem(item);
+        Debug.Log("Weapon equipped");
+        item.ItemData.Equipped = true;
     }
 }

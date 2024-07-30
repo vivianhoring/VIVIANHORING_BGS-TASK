@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryData : MonoBehaviour
 {
     [SerializeField]
     Canvas _inventoryCanvas;
     [SerializeField]
-    Inventory _inventory;
+    InventoryController _inventoryController;
     [SerializeField]
     Transform _itemsParent;
 
@@ -36,8 +36,10 @@ public class InventoryManager : MonoBehaviour
     void OnEnable()
     {
         _onInventoryActiveListener = _onInventoryActive.RegisterListener(new GameEventListener<bool>((bool inventoryOn) => SetActiveInventory(inventoryOn)));
+
         _onRemoveItemListener = _onRemoveItem.RegisterListener(new GameEventListener<Item>((_) => UpdateUI()));
         _onRemoveItem.RegisterListener(_onRemoveItemListener);
+
         _onUseItemListener = _onUseItem.RegisterListener(new GameEventListener<Item>((_) => UpdateUI()));
         _onUseItem.RegisterListener(_onUseItemListener);
     }
@@ -60,9 +62,10 @@ public class InventoryManager : MonoBehaviour
     {
         for(int i = 0; i < _slots.Length; i++)
         {
-            if(i<_inventory.InventoryList.Count)
+            //_slots[i].GetComponent<InventorySlot>().SinalizeItemEquipped(_inventoryController.InventoryList[i]);
+            if(i<_inventoryController.InventoryList.Count)
             {
-                _slots[i].AddItem(_inventory.InventoryList[i]); 
+                _slots[i].AddItem(_inventoryController.InventoryList[i]); 
             } else
             {
                 _slots[i].ClearSlot();

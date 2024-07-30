@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventoryCanvas: {fileID: 129392869}
-  _inventory: {fileID: 1777571862}
+  _inventoryController: {fileID: 1777571862}
   _itemsParent: {fileID: 1874926789}
   _onInventoryActive: {fileID: 11400000, guid: 82ca323a736042e46ba46b286f3c0ee0, type: 2}
   _onRemoveItem: {fileID: 11400000, guid: eaa3953573f946b4fbae6f6cd18bcb2f, type: 2}
@@ -504,6 +504,10 @@ PrefabInstance:
     - target: {fileID: 2499009084500872334, guid: 8ce1b2cd90aea564ea9e35dcc088480b, type: 3}
       propertyPath: m_Name
       value: InventorySlot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882229737191791230, guid: 8ce1b2cd90aea564ea9e35dcc088480b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4890378864163288085, guid: 8ce1b2cd90aea564ea9e35dcc088480b, type: 3}
       propertyPath: m_Pivot.x

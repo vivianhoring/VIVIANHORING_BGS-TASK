@@ -222,5 +222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onItemPickedUp: {fileID: 11400000, guid: 569007f66b311194fb368c783ff6d808, type: 2}
-  _onTryItemPickedUp: {fileID: 0}
+  _onTryItemPickedUp: {fileID: 11400000, guid: 57661e3d81e85314087136b563fffd6d, type: 2}
+  _onRemoveItem: {fileID: 11400000, guid: eaa3953573f946b4fbae6f6cd18bcb2f, type: 2}
   _inventorySize: 0
+  _onUseItem: {fileID: 11400000, guid: 1237bef2733504142bfc26f665b30113, type: 2}
+  _onEquippedItem: {fileID: 0}

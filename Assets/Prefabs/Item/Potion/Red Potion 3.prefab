@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 261211146950260698}
   m_Layer: 0
   m_Name: Red Potion 3
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7b3876a2b72c44540a4bbd5aaba9e506, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onItemPickedUp: {fileID: 11400000, guid: 569007f66b311194fb368c783ff6d808, type: 2}
-  _itemData: {fileID: 11400000, guid: 6bbe38e775f113344ab4cb9154b70911, type: 2}
+  _itemDetails: {fileID: 11400000, guid: c82b856a6f7e35c4083db55dba3f2a9f, type: 2}
 --- !u!60 &5998506746749920923
 PolygonCollider2D:
   m_ObjectHideFlags: 0

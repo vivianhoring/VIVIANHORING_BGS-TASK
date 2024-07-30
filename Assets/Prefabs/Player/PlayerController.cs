@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMoviment : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] 
     float _movementSpeed = 5f;
@@ -26,7 +26,7 @@ public class PlayerMoviment : MonoBehaviour
             _inventoryActive = !_inventoryActive;
             _onInventoryActive.Trigger(_inventoryActive);
         }
-        if(!_inventoryActive) Moviment();
+        Moviment();
     }
 
     void Moviment()
