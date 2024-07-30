@@ -235,4 +235,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6550a6534a4a3e24fb293abd2703d2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onItemPickedUp: {fileID: 11400000, guid: 569007f66b311194fb368c783ff6d808, type: 2}
+  _onTryItemPickedUp: {fileID: 11400000, guid: 57661e3d81e85314087136b563fffd6d, type: 2}
