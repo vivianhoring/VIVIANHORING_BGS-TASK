@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b1dd047e7a1d274489630453d39046d, type: 3}
-  m_Name: PlayerDetails
+  m_Script: {fileID: 11500000, guid: e220ee5076bb2414ab764d50f3884903, type: 3}
+  m_Name: ItemDetails_LeatherHelmet
   m_EditorClassIdentifier: 
-  _name: Hero
-  _maxHP: 100
-  _damage: 5
-  _armor: 10
+  _name: Leather Helmet
+  _itemType: 1
+  _useType: 1
+  _slotType: 1
+  _image: {fileID: 21300000, guid: 5ff9b869a12e70b4db7a137f84ed920b, type: 3}
+  _hpRecovery: 0

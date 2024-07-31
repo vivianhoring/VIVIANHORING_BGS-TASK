@@ -47,7 +47,7 @@ public class InventoryController : MonoBehaviour
     {
         if(item.ItemType == ItemType.Bag) 
         { 
-            _inventorySize += 3;
+            _inventorySize += 8;
             _onItemPickedUp.Trigger(item);
             Debug.Log(_inventorySize);
         }

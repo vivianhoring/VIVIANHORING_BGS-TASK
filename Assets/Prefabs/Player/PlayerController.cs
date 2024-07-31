@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     string _name; public string Name => _name;
     int _maxHP; public int MaxHP => _maxHP;
     int _damage; public int Damage => _damage;
+    int _armor; public int Armor => _armor;
 
     void Awake()
     {
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
         _name = _playerDetails.Name;
         _maxHP = _playerDetails.MaxHP;
         _damage = _playerDetails.Damage;
+        _armor = _playerDetails.Armor;
     }
 
     void Update()

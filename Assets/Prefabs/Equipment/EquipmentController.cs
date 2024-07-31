@@ -48,9 +48,5 @@ public class EquipmentController : MonoBehaviour
             slot.UnequipItem();
             slot.EquipItem(item);
         }
-        UnityEngine.Debug.Log(_weaponSlot.SlotType + ": " + _weaponSlot.ItemEquippedDetails);
-        UnityEngine.Debug.Log(_helmetSlot.SlotType + ": " + _helmetSlot.ItemEquippedDetails);
-        UnityEngine.Debug.Log(_helmetSlot.SlotType + ": " + _helmetSlot.ItemEquippedDetails);
-        UnityEngine.Debug.Log(_bootsSlot.SlotType + ": " + _bootsSlot.ItemEquippedDetails);
     }
 }

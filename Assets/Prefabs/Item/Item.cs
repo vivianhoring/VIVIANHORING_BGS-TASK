@@ -23,6 +23,7 @@ public class Item : MonoBehaviour, ItemInterface
         _itemType = _details.ItemType;
         _image = _details.Image;
         _useType = _details.UseType;
+        _slotType = _details.SlotType;
         _hpRecovery = _details.HpRecovery;
     }
 

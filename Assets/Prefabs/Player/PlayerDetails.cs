@@ -10,4 +10,6 @@ public class PlayerDetails : ScriptableObject
     int _maxHP; public int MaxHP => _maxHP;
     [SerializeField]
     int _damage; public int Damage => _damage;
+    [SerializeField]
+    int _armor; public int Armor => _armor;
 }

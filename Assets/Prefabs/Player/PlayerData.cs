@@ -14,6 +14,8 @@ public class PlayerData : MonoBehaviour
     TMP_Text _maxHpText;
     [SerializeField]
     TMP_Text _damageText;
+    [SerializeField]
+    TMP_Text _armorText;
 
     PlayerController _playerController;
 
@@ -21,6 +23,7 @@ public class PlayerData : MonoBehaviour
     int _hp; public int HP { get; }
     int _maxHp; public int MaxHp { get; }
     int _damage; public int Damage { get; }
+    int _armor; public int Armor { get; }
 
     void Start()
     {
@@ -30,9 +33,11 @@ public class PlayerData : MonoBehaviour
         _name = _playerController.Name;
         _maxHp = _playerController.MaxHP;
         _damage = _playerController.Damage;
+        _armor = _playerController.Armor;
         _nameText.text = _name;
         _maxHpText.text = _maxHp.ToString();
         _damageText.text = _damage.ToString();
+        _armorText.text = _armor.ToString();
     }
 
     public void UsePotion(Item item)
