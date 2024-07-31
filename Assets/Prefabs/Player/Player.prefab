@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 5
   _onInventoryActive: {fileID: 11400000, guid: 82ca323a736042e46ba46b286f3c0ee0, type: 2}
+  _onEquipmentActive: {fileID: 11400000, guid: 5106ecfad76dc844ca2eeffa11ece688, type: 2}
 --- !u!95 &3124888129839011476
 Animator:
   serializedVersion: 5
@@ -222,5 +223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onItemPickedUp: {fileID: 11400000, guid: 569007f66b311194fb368c783ff6d808, type: 2}
-  _onTryItemPickedUp: {fileID: 0}
+  _onTryItemPickedUp: {fileID: 11400000, guid: 57661e3d81e85314087136b563fffd6d, type: 2}
   _inventorySize: 0
+  _onItemEquippedChange: {fileID: 0}
+  _inventoryData: {fileID: 0}
+  _equipmentController: {fileID: 0}

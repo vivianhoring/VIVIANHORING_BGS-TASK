@@ -1,6 +1,6 @@
 using System;
 
-// Note: This code has been used in previous projects, so it was written beforehand
+// Note: This code has been obtained from another project I'm currently developing
 public interface IGameEventListener<Item>
 {
   public void OnEventTriggered(Item item);

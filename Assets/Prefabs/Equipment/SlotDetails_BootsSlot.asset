@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc344330ec0afb040b7bc707b1b094cd, type: 3}
-  m_Name: GE_OnRemoveItem
+  m_Script: {fileID: 11500000, guid: a0d415cd6f631ac40978e6c03cb6e228, type: 3}
+  m_Name: SlotDetails_BootsSlot
   m_EditorClassIdentifier: 
+  _slotType: 3
