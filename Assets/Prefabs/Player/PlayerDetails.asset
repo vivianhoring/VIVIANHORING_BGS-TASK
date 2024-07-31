@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Hero
   _maxHP: 100
-  _damage: 5
-  _armor: 10
+  _damage: 3
+  _armor: 8

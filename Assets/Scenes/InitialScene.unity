@@ -2757,6 +2757,7 @@ MonoBehaviour:
   _helmetSlot: {fileID: 1643246554}
   _armorSlot: {fileID: 352496496}
   _bootsSlot: {fileID: 508004708}
+  _playerData: {fileID: 1910806162}
 --- !u!114 &598249877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62983,6 +62984,10 @@ PrefabInstance:
       propertyPath: _damageText
       value: 
       objectReference: {fileID: 216724116}
+    - target: {fileID: 7974576743479317061, guid: 125fe42ac139f074cb99502bfcb0a654, type: 3}
+      propertyPath: _equipmentController
+      value: 
+      objectReference: {fileID: 598249876}
     - target: {fileID: 8009537919682197352, guid: 125fe42ac139f074cb99502bfcb0a654, type: 3}
       propertyPath: m_Name
       value: Player

@@ -18,4 +18,8 @@ public class ItemDetails : ScriptableObject
     Sprite _image; public Sprite Image => _image;
     [SerializeField]
     int _hpRecovery; public int HpRecovery => _hpRecovery;
+    [SerializeField]
+    int _damage; public int Damage => _damage;
+    [SerializeField]
+    int _armor; public int Armor => _armor;
 }

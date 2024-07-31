@@ -8,6 +8,8 @@ public interface ItemInterface
     public string Name { get; }
     public Sprite Image { get; }
     public int HpRecovery { get; }
+    public int Damage { get; }
+    public int Armor { get; }
 
     public ItemType ItemType { get; }
     public UseType UseType { get; }

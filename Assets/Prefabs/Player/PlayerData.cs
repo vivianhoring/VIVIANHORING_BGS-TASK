@@ -22,6 +22,8 @@ public class PlayerData : MonoBehaviour
     string _name; public int Name { get; }
     int _hp; public int HP { get; }
     int _maxHp; public int MaxHp { get; }
+    int _initialDamage; public int InitialDamage { get; }
+    int _initialArmor; public int InitialArmor { get; }
     int _damage; public int Damage { get; }
     int _armor; public int Armor { get; }
 
@@ -32,12 +34,12 @@ public class PlayerData : MonoBehaviour
         _playerController = GetComponent<PlayerController>();
         _name = _playerController.Name;
         _maxHp = _playerController.MaxHP;
-        _damage = _playerController.Damage;
-        _armor = _playerController.Armor;
+        _initialDamage = _playerController.Damage;
+        _initialArmor = _playerController.Armor;
         _nameText.text = _name;
         _maxHpText.text = _maxHp.ToString();
-        _damageText.text = _damage.ToString();
-        _armorText.text = _armor.ToString();
+        _damageText.text = _initialDamage.ToString();
+        _armorText.text = _initialArmor.ToString();
     }
 
     public void UsePotion(Item item)
@@ -47,5 +49,15 @@ public class PlayerData : MonoBehaviour
             _hp += item.ItemDetails.HpRecovery;
             _healthBar.UpdateHpBar(_hp);
         }
+    }
+    public void ChangeItemDamage(int damage)
+    {
+        _damage = _initialDamage + damage;
+        _damageText.text = _damage.ToString();
+    }
+    public void ChangeItemArmor(int armor)
+    {
+        _armor = _initialArmor + armor;
+        _armorText.text = _armor.ToString();
     }
 }

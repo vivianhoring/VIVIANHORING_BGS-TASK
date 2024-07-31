@@ -74,6 +74,7 @@ public class InventoryController : MonoBehaviour
         }
         _inventoryData.UpdateUI();
         if(!inventorySlotChanged && removeItem.UseType is UseType.Equipable) _equipmentController.SelectSlot(removeItem, false);
+        
     }
 
     public void UseItem(Item item)
