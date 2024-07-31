@@ -982,6 +982,10 @@ PrefabInstance:
       propertyPath: _details
       value: 
       objectReference: {fileID: 11400000, guid: 77ca3e0037abd8b458b7167c4f065790, type: 2}
+    - target: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+      propertyPath: _imageSlot
+      value: 
+      objectReference: {fileID: 508004709}
     - target: {fileID: 3294020170286569382, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
       propertyPath: m_Name
       value: EquipmentSlot (3)
@@ -1000,6 +1004,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cd248a3cf5867d47959a9e5e5bbf2e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &508004709 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2983905349820647028, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+  m_PrefabInstance: {fileID: 508004707}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &598249872
@@ -1299,6 +1314,10 @@ PrefabInstance:
       propertyPath: _details
       value: 
       objectReference: {fileID: 11400000, guid: dc79f535ba5c4ab4194a556582c34b79, type: 2}
+    - target: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+      propertyPath: _imageSlot
+      value: 
+      objectReference: {fileID: 996801989}
     - target: {fileID: 3294020170286569382, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
       propertyPath: m_Name
       value: EquipmentSlot (2)
@@ -1308,6 +1327,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+--- !u!114 &996801989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2983905349820647028, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+  m_PrefabInstance: {fileID: 996801988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1200277729
 GameObject:
   m_ObjectHideFlags: 0
@@ -4222,15 +4252,34 @@ PrefabInstance:
       propertyPath: _details
       value: 
       objectReference: {fileID: 11400000, guid: 60853f5c28aeade40a1179be31f2d964, type: 2}
+    - target: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+      propertyPath: _imageSlot
+      value: 
+      objectReference: {fileID: 1785203728}
     - target: {fileID: 3294020170286569382, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
       propertyPath: m_Name
       value: EquipmentSlot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645004359991224717, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+--- !u!114 &1785203728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2983905349820647028, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+  m_PrefabInstance: {fileID: 1785203727}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1820261419
 GameObject:
   m_ObjectHideFlags: 0
@@ -4723,6 +4772,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8710824165696304729, guid: 8ce1b2cd90aea564ea9e35dcc088480b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4874,9 +4927,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
-      propertyPath: _details
+      propertyPath: _imageSlot
       value: 
-      objectReference: {fileID: 11400000, guid: 2c879ba79483f4d489eb38f453424930, type: 2}
+      objectReference: {fileID: 7036559615055498050}
     - target: {fileID: 3294020170286569382, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
       propertyPath: m_Name
       value: EquipmentSlot
@@ -4886,6 +4939,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+--- !u!114 &7036559615055498050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2983905349820647028, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+  m_PrefabInstance: {fileID: 7036559615055498049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8228702476545908429
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,23 +8,27 @@ public class Slot : MonoBehaviour
 {
     [SerializeField]
     SlotDetails _details;
-    SlotType _slotType; public SlotType SlotType => _slotType;
+    [SerializeField]
     Image _imageSlot; public Image ImageSlot => _imageSlot;
+    SlotType _slotType; public SlotType SlotType => _slotType;
     ItemDetails _itemEquippedDetails; public ItemDetails ItemEquippedDetails => _itemEquippedDetails;
 
     void Awake()
     {
         _slotType = _details.SlotType;
-        _imageSlot = GetComponent<Image>();
     }
 
     public void EquipItem(Item item)
     {
         _itemEquippedDetails = item.ItemDetails;
+        _imageSlot.enabled = true;
+        _imageSlot.sprite = item.Image;
     }
     public void UnequipItem()
     {
         _itemEquippedDetails = null;
+        _imageSlot.enabled = false;
+        _imageSlot.sprite = null;
     }
 }
 
