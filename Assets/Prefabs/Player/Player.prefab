@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9089859692204038916}
   - component: {fileID: 3124888129839011476}
   - component: {fileID: 5983531698221582241}
-  - component: {fileID: 1701152899091667839}
+  - component: {fileID: 7974576743479317061}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8009537919682197352}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.78, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 5
+  _playerDetails: {fileID: 11400000, guid: 74407f975cf0a034f8aab2797acc40f2, type: 2}
   _onInventoryActive: {fileID: 11400000, guid: 82ca323a736042e46ba46b286f3c0ee0, type: 2}
   _onEquipmentActive: {fileID: 11400000, guid: 5106ecfad76dc844ca2eeffa11ece688, type: 2}
 --- !u!95 &3124888129839011476
@@ -210,7 +211,7 @@ PolygonCollider2D:
       - {x: 0.3344338, y: 0.17610252}
       - {x: 0.26073635, y: 0.43807524}
   m_UseDelaunayMesh: 0
---- !u!114 &1701152899091667839
+--- !u!114 &7974576743479317061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,12 +220,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8009537919682197352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaccc1a363af33548a000fcb8af8b0b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7711515c0f1faee459938ccd61d8f892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onItemPickedUp: {fileID: 11400000, guid: 569007f66b311194fb368c783ff6d808, type: 2}
-  _onTryItemPickedUp: {fileID: 11400000, guid: 57661e3d81e85314087136b563fffd6d, type: 2}
-  _inventorySize: 0
-  _onItemEquippedChange: {fileID: 0}
-  _inventoryData: {fileID: 0}
-  _equipmentController: {fileID: 0}
+  _healthBar: {fileID: 0}
+  _nameText: {fileID: 0}
+  _maxHpText: {fileID: 0}
+  _damageText: {fileID: 0}
