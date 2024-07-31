@@ -14,6 +14,7 @@ public class Item : MonoBehaviour, ItemInterface
     UseType _useType; public UseType UseType => _useType;
     SlotType _slotType; public SlotType SlotType => _slotType;
     Sprite _image; public Sprite Image => _image;
+    public bool ItemIsEquipped;
     
     void Awake()
     {

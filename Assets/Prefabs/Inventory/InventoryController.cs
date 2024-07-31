@@ -70,6 +70,7 @@ public class InventoryController : MonoBehaviour
             }
         }
         _inventoryData.UpdateUI();
+        _equipmentController.SelectSlot(removeItem, false);
     }
 
     public void UseItem(Item item)
@@ -93,6 +94,6 @@ public class InventoryController : MonoBehaviour
 
     void OnEquippedItem(Item item)
     {
-        _equipmentController.SelectSlot(item);
+        _equipmentController.SelectSlot(item, true);
     }
 }

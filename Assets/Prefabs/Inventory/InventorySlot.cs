@@ -35,6 +35,7 @@ public class InventorySlot : MonoBehaviour
         _icon.enabled = false;
         _removeButton.interactable = false;
         _itemButton.interactable = false;
+        _equippedText.enabled  = false;
     }
 
     public void OnRemoveButton()
@@ -45,5 +46,6 @@ public class InventorySlot : MonoBehaviour
     public void OnUseItem()
     {
         _inventoryController.UseItem(_item);
+        _equippedText.enabled = _item.ItemIsEquipped;
     }
 }

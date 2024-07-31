@@ -26,11 +26,15 @@ public class EquipmentController : MonoBehaviour
         };
     }
 
-    public void SelectSlot(Item item)
+    public void SelectSlot(Item item, bool equip)
     {
         foreach (Slot slot in _slots)
         {
-            if(slot.SlotType == item.SlotType) EquipItem(item, slot);
+            if(slot.SlotType == item.SlotType) 
+            {
+                if(equip) EquipItem(item, slot);
+                else slot.UnequipItem();
+            }
         }
     }
 
@@ -38,7 +42,7 @@ public class EquipmentController : MonoBehaviour
     {
         if(slot.ItemEquippedDetails == null) 
         {
-        slot.EquipItem(item);
+            slot.EquipItem(item);
         }
         else 
         {

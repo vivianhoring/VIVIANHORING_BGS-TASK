@@ -12,6 +12,7 @@ public class Slot : MonoBehaviour
     Image _imageSlot; public Image ImageSlot => _imageSlot;
     SlotType _slotType; public SlotType SlotType => _slotType;
     ItemDetails _itemEquippedDetails; public ItemDetails ItemEquippedDetails => _itemEquippedDetails;
+    Item _itemEquipped;
 
     void Awake()
     {
@@ -23,9 +24,12 @@ public class Slot : MonoBehaviour
         _itemEquippedDetails = item.ItemDetails;
         _imageSlot.enabled = true;
         _imageSlot.sprite = item.Image;
+        item.ItemIsEquipped = true;
+        _itemEquipped = item;
     }
     public void UnequipItem()
     {
+        _itemEquipped.ItemIsEquipped = false;
         _itemEquippedDetails = null;
         _imageSlot.enabled = false;
         _imageSlot.sprite = null;
