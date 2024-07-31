@@ -40,12 +40,13 @@ public class InventorySlot : MonoBehaviour
 
     public void OnRemoveButton()
     {
-        _inventoryController.RemoveItem(_item);
+        _inventoryController.RemoveItem(_item, false);
     }
 
     public void OnUseItem()
     {
+        if(_item.UseType is UseType.Equipable) _equippedText.enabled = _item.ItemIsEquipped;
         _inventoryController.UseItem(_item);
-        _equippedText.enabled = _item.ItemIsEquipped;
+        
     }
 }

@@ -60,7 +60,7 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    public void RemoveItem(Item removeItem)
+    public void RemoveItem(Item removeItem, bool inventorySlotChanged)
     {
         for (int i = _inventoryList.Count - 1; i >= 0; i--)
         {
@@ -70,7 +70,7 @@ public class InventoryController : MonoBehaviour
             }
         }
         _inventoryData.UpdateUI();
-        _equipmentController.SelectSlot(removeItem, false);
+        if(!inventorySlotChanged && removeItem.UseType is UseType.Equipable) _equipmentController.SelectSlot(removeItem, false);
     }
 
     public void UseItem(Item item)
@@ -82,7 +82,7 @@ public class InventoryController : MonoBehaviour
     void UsePotion(Item item)
     {
         Debug.Log("Potion consumed" + item);
-        RemoveItem(item);
+        RemoveItem(item, false);
         _inventoryData.UpdateUI();
     }
 

@@ -29,7 +29,6 @@ public class Slot : MonoBehaviour
     }
     public void UnequipItem()
     {
-        _itemEquipped.ItemIsEquipped = false;
         _itemEquippedDetails = null;
         _imageSlot.enabled = false;
         _imageSlot.sprite = null;
