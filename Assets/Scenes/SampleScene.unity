@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 129392868}
   - component: {fileID: 129392867}
   - component: {fileID: 129392871}
-  - component: {fileID: 129392872}
   m_Layer: 5
   m_Name: Canvas - UI
   m_TagString: Untagged
@@ -245,20 +244,7 @@ MonoBehaviour:
   _inventorySize: 0
   _onItemEquippedChange: {fileID: 11400000, guid: 65fca6b28f23da642b3f780c2c653702, type: 2}
   _inventoryData: {fileID: 224704790}
-  _equipmentController: {fileID: 129392872}
---- !u!114 &129392872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129392866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eebc175f12a259247ab9fe888ee0c53f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _equipmentData: {fileID: 598249876}
+  _equipmentController: {fileID: 598249876}
 --- !u!1001 &156518091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -428,7 +414,6 @@ MonoBehaviour:
   _inventoryController: {fileID: 129392871}
   _itemsParent: {fileID: 1874926789}
   _onInventoryActive: {fileID: 11400000, guid: 82ca323a736042e46ba46b286f3c0ee0, type: 2}
-  _onItemEquippedChange: {fileID: 11400000, guid: 65fca6b28f23da642b3f780c2c653702, type: 2}
 --- !u!1001 &262214440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -636,6 +621,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2457509555551514858, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
   m_PrefabInstance: {fileID: 996801988}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &352496496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+  m_PrefabInstance: {fileID: 996801988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd248a3cf5867d47959a9e5e5bbf2e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &450550728
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,6 +978,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+      propertyPath: _details
+      value: 
+      objectReference: {fileID: 11400000, guid: 77ca3e0037abd8b458b7167c4f065790, type: 2}
     - target: {fileID: 3294020170286569382, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
       propertyPath: m_Name
       value: EquipmentSlot (3)
@@ -993,13 +993,13 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
 --- !u!114 &508004708 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4645004359991224717, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
   m_PrefabInstance: {fileID: 508004707}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cd248a3cf5867d47959a9e5e5bbf2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &598249872
@@ -1088,13 +1088,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 598249872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a6bde0afcff47b478e7ef913d9252bd, type: 3}
+  m_Script: {fileID: 11500000, guid: eebc175f12a259247ab9fe888ee0c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponEquipmentImage: {fileID: 7036559615055498050}
-  _helmetEquipmentImage: {fileID: 1785203728}
-  _armorEquipmentImage: {fileID: 996801989}
-  _bootsEquipmentImage: {fileID: 508004708}
+  _weaponSlot: {fileID: 1263764373}
+  _helmetSlot: {fileID: 1643246554}
+  _armorSlot: {fileID: 352496496}
+  _bootsSlot: {fileID: 508004708}
 --- !u!224 &652872571 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4890378864163288085, guid: 8ce1b2cd90aea564ea9e35dcc088480b, type: 3}
@@ -1295,6 +1295,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+      propertyPath: _details
+      value: 
+      objectReference: {fileID: 11400000, guid: dc79f535ba5c4ab4194a556582c34b79, type: 2}
     - target: {fileID: 3294020170286569382, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
       propertyPath: m_Name
       value: EquipmentSlot (2)
@@ -1304,17 +1308,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
---- !u!114 &996801989 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4645004359991224717, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
-  m_PrefabInstance: {fileID: 996801988}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1200277729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,6 +1520,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2457509555551514858, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
   m_PrefabInstance: {fileID: 7036559615055498049}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1263764373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+  m_PrefabInstance: {fileID: 7036559615055498049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd248a3cf5867d47959a9e5e5bbf2e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1317038397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4110,6 +4114,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2457509555551514858, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
   m_PrefabInstance: {fileID: 1785203727}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1643246554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+  m_PrefabInstance: {fileID: 1785203727}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd248a3cf5867d47959a9e5e5bbf2e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1702635133 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4890378864163288085, guid: 8ce1b2cd90aea564ea9e35dcc088480b, type: 3}
@@ -4203,6 +4218,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+      propertyPath: _details
+      value: 
+      objectReference: {fileID: 11400000, guid: 60853f5c28aeade40a1179be31f2d964, type: 2}
     - target: {fileID: 3294020170286569382, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
       propertyPath: m_Name
       value: EquipmentSlot (1)
@@ -4212,17 +4231,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
---- !u!114 &1785203728 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4645004359991224717, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
-  m_PrefabInstance: {fileID: 1785203727}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1820261419
 GameObject:
   m_ObjectHideFlags: 0
@@ -4865,6 +4873,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2828238440476940959, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
+      propertyPath: _details
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c879ba79483f4d489eb38f453424930, type: 2}
     - target: {fileID: 3294020170286569382, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
       propertyPath: m_Name
       value: EquipmentSlot
@@ -4874,17 +4886,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
---- !u!114 &7036559615055498050 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4645004359991224717, guid: 77aef05c90aed9a49b18f152f32083d6, type: 3}
-  m_PrefabInstance: {fileID: 7036559615055498049}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8228702476545908429
 PrefabInstance:
   m_ObjectHideFlags: 0

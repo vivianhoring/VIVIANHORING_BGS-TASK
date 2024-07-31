@@ -41,7 +41,7 @@ public class InventoryController : MonoBehaviour
 
     void TryPickUpItem(Item item)
     {
-        if(item.ItemDetails.ItemType == ItemType.Bag) 
+        if(item.ItemType == ItemType.Bag) 
         { 
             _inventorySize += 3;
             _onItemPickedUp.Trigger(item);
@@ -63,7 +63,7 @@ public class InventoryController : MonoBehaviour
     {
         for (int i = _inventoryList.Count - 1; i >= 0; i--)
         {
-            if (_inventoryList[i].ItemDetails.ItemType == removeItem.ItemDetails.ItemType)
+            if (_inventoryList[i].ItemType == removeItem.ItemType)
             {
                 _inventoryList.RemoveAt(i);
             }
@@ -73,9 +73,9 @@ public class InventoryController : MonoBehaviour
 
     public void UseItem(Item item)
     {
-        if(item.ItemDetails.ItemType == ItemType.Potion) UsePotion(item);
-        else if(item.ItemDetails.ItemType == ItemType.Armor) EquipArmor(item);
-        else if(item.ItemDetails.ItemType == ItemType.Weapon) EquipWeapon(item);
+        if(item.ItemType == ItemType.Potion) UsePotion(item);
+        else if(item.ItemType == ItemType.Armor) EquipArmor(item);
+        else if(item.ItemType == ItemType.Weapon) EquipWeapon(item);
     }
 
     void UsePotion(Item item)
@@ -83,7 +83,6 @@ public class InventoryController : MonoBehaviour
         Debug.Log("Potion consumed");
         RemoveItem(item);
         _inventoryData.UpdateUI();
-        item.ItemDetails.Equipped = false;
     }
 
     void EquipArmor(Item item)
@@ -100,6 +99,6 @@ public class InventoryController : MonoBehaviour
 
     void OnEquippedItem(Item item)
     {
-        _equipmentController.SelectEquipment(item);
+        _equipmentController.SelectSlot(item);
     }
 }

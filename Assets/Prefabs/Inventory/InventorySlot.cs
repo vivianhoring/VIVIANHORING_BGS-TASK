@@ -17,27 +17,12 @@ public class InventorySlot : MonoBehaviour
     [SerializeField]
     InventoryController _inventoryController;
 
-    [SerializeField]
-    BoolGameEvent _onItemEquippedChange;
-    IGameEventListener<bool> _onItemEquippedChangeListener;
-
     Item _item;
-
-    void OnEnable()
-    {
-        _onItemEquippedChangeListener = new GameEventListener<bool>(itemEquipped => SetEquippedFlag(itemEquipped));
-        _onItemEquippedChange.RegisterListener(_onItemEquippedChangeListener);
-    }
-
-    void OnDisable()
-    {
-        _onItemEquippedChange.UnregisterListener(_onItemEquippedChangeListener);
-    }
 
     public void AddItem(Item newItem)
     {
         _item = newItem;
-        _icon.sprite = _item.ItemDetails.Image;
+        _icon.sprite = _item.Image;
         _icon.enabled = true;
         _removeButton.interactable = true;
         _itemButton.interactable = true;
@@ -60,10 +45,5 @@ public class InventorySlot : MonoBehaviour
     public void OnUseItem()
     {
         _inventoryController.UseItem(_item);
-    }
-
-    public void SetEquippedFlag(bool itemEquippedChange)
-    {
-        _equippedText.enabled = itemEquippedChange;
     }
 }

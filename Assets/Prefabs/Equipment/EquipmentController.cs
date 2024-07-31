@@ -1,46 +1,49 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EquipmentController : MonoBehaviour
 {
     [SerializeField]
-    EquipmentData _equipmentData;
-    List<Item> _equippedItems;
+    Slot _weaponSlot;
+    [SerializeField]
+    Slot _helmetSlot;
+    [SerializeField]
+    Slot _armorSlot;
+    [SerializeField]
+    Slot _bootsSlot;
 
-    public void SelectEquipment(Item item)
+    List<Slot> _slots;
+
+    public void SelectSlot(Item item)
     {
-        if(item.ItemDetails.ItemType is ItemType.Weapon) EquipItem(item, ItemType.Weapon);
-        else if(item.ItemDetails.ItemType is ItemType.Helmet) EquipItem(item, ItemType.Helmet);
-        else if(item.ItemDetails.ItemType is ItemType.Armor) EquipItem(item, ItemType.Armor);
-        else if(item.ItemDetails.ItemType is ItemType.Boots) EquipItem(item, ItemType.Boots);
+        if(_slots == null) PopulateSlots();
+        foreach (Slot slot in _slots)
+        {
+            if(slot.SlotType == item.SlotType) EquipItem(item, slot);
+        }
     }
 
-    void EquipItem(Item item, ItemType type)
+    void EquipItem(Item item, Slot slot)
     {
-        if(!EquippedItemTypeIsNull(_equippedItems, type))
+        if(slot.ItemEquipped == null) slot.EquipItem(item);
+        else 
         {
-            foreach(Item equippedItem in _equippedItems)
-            {
-                if(equippedItem.ItemDetails.ItemType == type) 
-                {
-                    equippedItem.ItemDetails.Equipped = false;
-                    _equippedItems.Remove(equippedItem);
-                }
-            }
+            slot.UnequipItem();
+            slot.EquipItem(item);
         }
-        _equippedItems.Add(item);
-        item.ItemDetails.Equipped = true;
-        _equipmentData.UpdateUI(_equippedItems);
+        UnityEngine.Debug.Log(_weaponSlot.SlotType + ": " + _weaponSlot.ItemEquipped);
+        UnityEngine.Debug.Log(_helmetSlot.SlotType + ": " + _helmetSlot.ItemEquipped);
+        UnityEngine.Debug.Log(_helmetSlot.SlotType + ": " + _helmetSlot.ItemEquipped);
+        UnityEngine.Debug.Log(_bootsSlot.SlotType + ": " + _bootsSlot.ItemEquipped);
     }
 
-    bool EquippedItemTypeIsNull(List<Item> equippedItems, ItemType type)
+    
+    void PopulateSlots()
     {
-        foreach(Item item in equippedItems)
-        {
-            if (item.ItemDetails.ItemType == type) return false;
-        }
-        return true;
+        _slots.Add(_weaponSlot);
+        _slots.Add(_helmetSlot);
+        _slots.Add(_armorSlot);
+        _slots.Add(_bootsSlot);
     }
 }
