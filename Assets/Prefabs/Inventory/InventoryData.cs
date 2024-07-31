@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class InventoryData : MonoBehaviour
@@ -16,10 +13,6 @@ public class InventoryData : MonoBehaviour
     BoolGameEvent _onInventoryActive;
     IGameEventListener<bool> _onInventoryActiveListener;
 
-    //[SerializeField]
-    //BoolGameEvent _onItemEquippedChange;
-    //IGameEventListener<bool> _onItemEquippedChangeListener;
-
     bool _inventoryOn;
     InventorySlot[] _slots;
 
@@ -32,14 +25,11 @@ public class InventoryData : MonoBehaviour
     void OnEnable()
     {
         _onInventoryActiveListener = _onInventoryActive.RegisterListener(new GameEventListener<bool>((bool inventoryOn) => SetActiveInventory(inventoryOn)));
-        //_onItemEquippedChangeListener = new GameEventListener<bool>(itemEquippedChange => SetEquippedFlagChange(itemEquippedChange));
-        //_onItemEquippedChange.RegisterListener(_onItemEquippedChangeListener);
     }
 
     void OnDisable()
     {
         _onInventoryActive.UnregisterListener(_onInventoryActiveListener);
-        //_onItemEquippedChange.UnregisterListener(_onItemEquippedChangeListener);
     }
 
     void SetActiveInventory(bool inventoryOn)

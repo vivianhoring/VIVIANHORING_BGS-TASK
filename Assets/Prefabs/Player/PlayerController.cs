@@ -8,10 +8,13 @@ public class PlayerController : MonoBehaviour
     float _movementSpeed = 5f;
     [SerializeField] 
     BoolGameEvent _onInventoryActive;
+    [SerializeField] 
+    BoolGameEvent _onEquipmentActive;
     Rigidbody2D _rb;
     Animator _animator;
     Vector2 _moviment;
     bool _inventoryActive;
+    bool _equipmentActive;
 
     void Start()
     {
@@ -25,6 +28,11 @@ public class PlayerController : MonoBehaviour
         {
             _inventoryActive = !_inventoryActive;
             _onInventoryActive.Trigger(_inventoryActive);
+        }
+        if(Input.GetButtonDown("Equipment"))
+        {
+            _equipmentActive = !_equipmentActive;
+            _onEquipmentActive.Trigger(_equipmentActive);
         }
         Moviment();
     }

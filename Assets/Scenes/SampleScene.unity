@@ -1029,6 +1029,7 @@ GameObject:
   - component: {fileID: 598249875}
   - component: {fileID: 598249874}
   - component: {fileID: 598249876}
+  - component: {fileID: 598249877}
   m_Layer: 5
   m_Name: Equipments
   m_TagString: Untagged
@@ -1110,6 +1111,21 @@ MonoBehaviour:
   _helmetSlot: {fileID: 1643246554}
   _armorSlot: {fileID: 352496496}
   _bootsSlot: {fileID: 508004708}
+--- !u!114 &598249877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598249872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87dba6b25f2f862499790204325427d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _equipmentCanvas: {fileID: 502488191}
+  _itemsParent: {fileID: 497737066}
+  _onEquipmentActive: {fileID: 11400000, guid: 5106ecfad76dc844ca2eeffa11ece688, type: 2}
 --- !u!224 &652872571 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4890378864163288085, guid: 8ce1b2cd90aea564ea9e35dcc088480b, type: 3}
