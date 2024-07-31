@@ -24,6 +24,9 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     EquipmentController _equipmentController;
 
+    [SerializeField]
+    PlayerData _playerData;
+
     void OnEnable()
     {
         _onTryItemPickedUpListener = new GameEventListener<Item>(item => TryPickUpItem(item));
@@ -81,7 +84,7 @@ public class InventoryController : MonoBehaviour
 
     void UsePotion(Item item)
     {
-        Debug.Log("Potion consumed" + item);
+        _playerData.UsePotion(item);
         RemoveItem(item, false);
         _inventoryData.UpdateUI();
     }

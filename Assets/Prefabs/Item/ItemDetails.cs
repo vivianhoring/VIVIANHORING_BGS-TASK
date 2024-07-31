@@ -14,4 +14,6 @@ public class ItemDetails : ScriptableObject
     UseType _useType; public UseType UseType => _useType;
     [SerializeField]
     Sprite _image; public Sprite Image => _image;
+    [SerializeField]
+    int _hpRecovery; public int HpRecovery => _hpRecovery;
 }

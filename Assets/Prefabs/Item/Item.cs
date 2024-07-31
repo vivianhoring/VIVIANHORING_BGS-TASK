@@ -14,6 +14,7 @@ public class Item : MonoBehaviour, ItemInterface
     UseType _useType; public UseType UseType => _useType;
     SlotType _slotType; public SlotType SlotType => _slotType;
     Sprite _image; public Sprite Image => _image;
+    int _hpRecovery; public int HpRecovery => _hpRecovery;
     public bool ItemIsEquipped;
     
     void Awake()
@@ -22,6 +23,7 @@ public class Item : MonoBehaviour, ItemInterface
         _itemType = _details.ItemType;
         _image = _details.Image;
         _useType = _details.UseType;
+        _hpRecovery = _details.HpRecovery;
     }
 
     void OnEnable()

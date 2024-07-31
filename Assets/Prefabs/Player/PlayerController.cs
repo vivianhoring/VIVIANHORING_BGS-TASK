@@ -1,25 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] 
     float _movementSpeed = 5f;
+
+    [SerializeField]
+    PlayerDetails _playerDetails; public PlayerDetails PlayerDetails => _playerDetails;
+
     [SerializeField] 
     BoolGameEvent _onInventoryActive;
     [SerializeField] 
     BoolGameEvent _onEquipmentActive;
+
     Rigidbody2D _rb;
     Animator _animator;
     Vector2 _moviment;
     bool _inventoryActive;
     bool _equipmentActive;
 
-    void Start()
+    string _name; public string Name => _name;
+    int _maxHP; public int MaxHP => _maxHP;
+    int _damage; public int Damage => _damage;
+
+    void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _name = _playerDetails.Name;
+        _maxHP = _playerDetails.MaxHP;
+        _damage = _playerDetails.Damage;
     }
 
     void Update()
