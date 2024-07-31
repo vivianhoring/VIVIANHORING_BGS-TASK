@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -73,25 +74,18 @@ public class InventoryController : MonoBehaviour
 
     public void UseItem(Item item)
     {
-        if(item.ItemType == ItemType.Potion) UsePotion(item);
-        else if(item.ItemType == ItemType.Armor) EquipArmor(item);
-        else if(item.ItemType == ItemType.Weapon) EquipWeapon(item);
+        if(item.UseType == UseType.Consumable) UsePotion(item);
+        else if(item.UseType == UseType.Equipable) UseEquipableItem(item);
     }
 
     void UsePotion(Item item)
     {
-        Debug.Log("Potion consumed");
+        Debug.Log("Potion consumed" + item);
         RemoveItem(item);
         _inventoryData.UpdateUI();
     }
 
-    void EquipArmor(Item item)
-    {
-        OnEquippedItem(item);
-        _inventoryData.UpdateUI();
-    }
-
-    void EquipWeapon(Item item)
+    void UseEquipableItem(Item item)
     {
         OnEquippedItem(item);
         _inventoryData.UpdateUI();

@@ -10,7 +10,7 @@ public class Slot : MonoBehaviour
     SlotDetails _details;
     SlotType _slotType; public SlotType SlotType => _slotType;
     Image _imageSlot; public Image ImageSlot => _imageSlot;
-    Item _itemEquipped; public Item ItemEquipped => _itemEquipped;
+    ItemDetails _itemEquippedDetails; public ItemDetails ItemEquippedDetails => _itemEquippedDetails;
 
     void Awake()
     {
@@ -20,11 +20,11 @@ public class Slot : MonoBehaviour
 
     public void EquipItem(Item item)
     {
-        _itemEquipped = item;
+        _itemEquippedDetails = item.ItemDetails;
     }
     public void UnequipItem()
     {
-        _itemEquipped = null;
+        _itemEquippedDetails = null;
     }
 }
 

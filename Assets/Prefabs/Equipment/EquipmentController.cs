@@ -15,9 +15,19 @@ public class EquipmentController : MonoBehaviour
 
     List<Slot> _slots;
 
+    void Start()
+    {
+        _slots = new List<Slot>
+        {
+            _weaponSlot,
+            _helmetSlot,
+            _armorSlot,
+            _bootsSlot
+        };
+    }
+
     public void SelectSlot(Item item)
     {
-        if(_slots == null) PopulateSlots();
         foreach (Slot slot in _slots)
         {
             if(slot.SlotType == item.SlotType) EquipItem(item, slot);
@@ -26,24 +36,18 @@ public class EquipmentController : MonoBehaviour
 
     void EquipItem(Item item, Slot slot)
     {
-        if(slot.ItemEquipped == null) slot.EquipItem(item);
+        if(slot.ItemEquippedDetails == null) 
+        {
+        slot.EquipItem(item);
+        }
         else 
         {
             slot.UnequipItem();
             slot.EquipItem(item);
         }
-        UnityEngine.Debug.Log(_weaponSlot.SlotType + ": " + _weaponSlot.ItemEquipped);
-        UnityEngine.Debug.Log(_helmetSlot.SlotType + ": " + _helmetSlot.ItemEquipped);
-        UnityEngine.Debug.Log(_helmetSlot.SlotType + ": " + _helmetSlot.ItemEquipped);
-        UnityEngine.Debug.Log(_bootsSlot.SlotType + ": " + _bootsSlot.ItemEquipped);
-    }
-
-    
-    void PopulateSlots()
-    {
-        _slots.Add(_weaponSlot);
-        _slots.Add(_helmetSlot);
-        _slots.Add(_armorSlot);
-        _slots.Add(_bootsSlot);
+        UnityEngine.Debug.Log(_weaponSlot.SlotType + ": " + _weaponSlot.ItemEquippedDetails);
+        UnityEngine.Debug.Log(_helmetSlot.SlotType + ": " + _helmetSlot.ItemEquippedDetails);
+        UnityEngine.Debug.Log(_helmetSlot.SlotType + ": " + _helmetSlot.ItemEquippedDetails);
+        UnityEngine.Debug.Log(_bootsSlot.SlotType + ": " + _bootsSlot.ItemEquippedDetails);
     }
 }

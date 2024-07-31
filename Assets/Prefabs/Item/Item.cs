@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour, ItemInterface
 {
     [SerializeField]
-    ItemDetails _details;
+    ItemDetails _details; public ItemDetails ItemDetails => _details;
     [SerializeField]
     ItemGameEvent _onItemPickedUp;
     IGameEventListener<Item> _onItemPickedUpListener;
