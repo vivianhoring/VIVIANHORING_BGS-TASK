@@ -12,6 +12,9 @@ public class EquipmentController : MonoBehaviour
     [SerializeField]
     Slot _bootsSlot;
 
+    [SerializeField]
+    PlayerData _playerData;
+
     List<Slot> _slots;
 
     void Start()
@@ -25,14 +28,19 @@ public class EquipmentController : MonoBehaviour
         };
     }
 
-    public void SelectSlot(Item item, bool equip)
+    public void SelectSlot(Item item, bool equipped)
     {
         foreach (Slot slot in _slots)
         {
             if(slot.SlotType == item.SlotType) 
             {
-                if(equip) EquipItem(item, slot);
-                else slot.UnequipItem();
+                if(equipped) EquipItem(item, slot);
+                else 
+                {
+                    slot.UnequipItem();
+                    CalculateDamageChange();
+                    CalculateArmorChange();
+                }
             }
         }
     }
@@ -42,15 +50,38 @@ public class EquipmentController : MonoBehaviour
         if(slot.ItemEquippedDetails == null) 
         {
             slot.EquipItem(item);
+            CalculateDamageChange();
+            CalculateArmorChange();
         }
         else 
         {
             slot.UnequipItem();
             slot.EquipItem(item);
+            CalculateDamageChange();
+            CalculateArmorChange();
+            
         }
-        UnityEngine.Debug.Log(_weaponSlot.SlotType + ": " + _weaponSlot.ItemEquippedDetails);
-        UnityEngine.Debug.Log(_helmetSlot.SlotType + ": " + _helmetSlot.ItemEquippedDetails);
-        UnityEngine.Debug.Log(_helmetSlot.SlotType + ": " + _helmetSlot.ItemEquippedDetails);
-        UnityEngine.Debug.Log(_bootsSlot.SlotType + ": " + _bootsSlot.ItemEquippedDetails);
+    }
+
+    public void CalculateDamageChange()
+    {
+        int damage = 0;
+        foreach (Slot slot in _slots)
+        {
+            if(slot.ItemEquippedDetails != null ) damage += slot.ItemEquippedDetails.Damage;
+        }
+        Debug.Log(damage);
+        _playerData.ChangeItemDamage(damage);
+    }
+
+    public void CalculateArmorChange()
+    {
+        int armor = 0;
+        foreach (Slot slot in _slots)
+        {
+            if(slot.ItemEquippedDetails  != null ) armor += slot.ItemEquippedDetails.Armor;
+        }
+        Debug.Log(armor);
+        _playerData.ChangeItemArmor(armor);
     }
 }

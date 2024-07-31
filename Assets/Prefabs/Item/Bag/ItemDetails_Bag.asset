@@ -15,4 +15,6 @@ MonoBehaviour:
   _name: Bag
   _itemType: 5
   _useType: 2
+  _slotType: 4
   _image: {fileID: 21300000, guid: 93dbc8f96dc6c00418ba8f1a8e8992e4, type: 3}
+  _hpRecovery: 0

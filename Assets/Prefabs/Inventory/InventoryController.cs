@@ -47,7 +47,7 @@ public class InventoryController : MonoBehaviour
     {
         if(item.ItemType == ItemType.Bag) 
         { 
-            _inventorySize += 3;
+            _inventorySize += 8;
             _onItemPickedUp.Trigger(item);
             Debug.Log(_inventorySize);
         }
@@ -74,6 +74,7 @@ public class InventoryController : MonoBehaviour
         }
         _inventoryData.UpdateUI();
         if(!inventorySlotChanged && removeItem.UseType is UseType.Equipable) _equipmentController.SelectSlot(removeItem, false);
+        
     }
 
     public void UseItem(Item item)

@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e220ee5076bb2414ab764d50f3884903, type: 3}
-  m_Name: ItemDetails_IronSword
+  m_Name: ItemDetails_LeatherHelmet
   m_EditorClassIdentifier: 
-  _name: Iron Sword
-  _itemType: 0
+  _name: Leather Helmet
+  _itemType: 1
   _useType: 1
-  _slotType: 0
-  _image: {fileID: 21300000, guid: 8f28955d92038974a9b04aafaeea79b0, type: 3}
+  _slotType: 1
+  _image: {fileID: 21300000, guid: 5ff9b869a12e70b4db7a137f84ed920b, type: 3}
   _hpRecovery: 0
-  _damage: 10
+  _damage: 0
+  _armor: 5

@@ -47,6 +47,5 @@ public class InventorySlot : MonoBehaviour
     {
         if(_item.UseType is UseType.Equipable) _equippedText.enabled = _item.ItemIsEquipped;
         _inventoryController.UseItem(_item);
-        
     }
 }
